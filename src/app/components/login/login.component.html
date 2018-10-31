@@ -1,3 +1,8 @@
-<p>
-  login works!
-</p>
+<h2>
+	Login
+</h2>
+<form (submit)="goToDashboard($event)">
+	<input type="text" placeholder="Email"/>
+	<input type="password" placeholder="Password"/>
+	<button (click)="submit">Login</button>
+</form>

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LandingComponent } from './components/landing/landing.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
 	{
@@ -15,7 +16,7 @@ const routes: Routes = [
 		data: { title: 'Project Million' }
 	},{
 		path: 'dashboard',
-		component: LoginComponent,
+		component: DashboardComponent,
 		data: { title: 'Project Million' }
 	},{
 		path: '',
