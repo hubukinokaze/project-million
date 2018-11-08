@@ -1,8 +1,29 @@
-<h2>
-	Login
-</h2>
-<form (submit)="goToDashboard($event)">
-	<input type="text" placeholder="Email"/>
-	<input type="password" placeholder="Password"/>
-	<button type="submit">Login</button>
-</form>
+<div class="login_container">
+	<img class="background_image" src="../../assets/stock2.jpg">
+	<mat-card class="login_form_card">
+		<mat-card-header>
+			<mat-card-title>Rentalil</mat-card-title>
+		</mat-card-header>
+
+		<form class=form_container (submit)="login($event)" [formGroup]="loginForm" *ngIf="loginForm">
+			<mat-form-field>
+			    <input matInput formControlName="email">
+			    <mat-placeholder>Email</mat-placeholder>
+			    <mat-error *ngIf="loginForm.controls['email'].invalid">{{ invalidEmailMsg }}</mat-error>
+			</mat-form-field>
+
+			<mat-form-field>
+			    <input matInput type="password" formControlName="password">
+			    <mat-placeholder>Password</mat-placeholder>
+			    <mat-error *ngIf="loginForm.controls['password'].invalid">{{ invalidPWMsg }}</mat-error>
+			</mat-form-field>
+
+			<button color="primary" mat-stroked-button type="submit">Login</button>
+
+			<button color="secondary" mat-stroked-button (click)="backToLanding()">Back</button>
+
+			<div *ngIf="toggleErrorMsg">{{ errorMsg }}</div>
+		</form>
+	</mat-card>
+</div>
+
