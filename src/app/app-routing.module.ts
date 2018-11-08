@@ -4,6 +4,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
 	{
@@ -17,6 +18,7 @@ const routes: Routes = [
 	},{
 		path: 'dashboard',
 		component: DashboardComponent,
+		canActivate: [AuthGuard],
 		data: { title: 'Project Million' }
 	},{
 		path: '',
@@ -24,7 +26,8 @@ const routes: Routes = [
 		pathMatch: 'full'
 	},{
 		path: '**',
-		component: PageNotFoundComponent
+		component: PageNotFoundComponent,
+		data: { title: "Page Not Found" }
 	}
 ];
 
@@ -33,3 +36,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+ 
