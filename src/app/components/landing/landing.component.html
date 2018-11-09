@@ -1,15 +1,19 @@
 <div class="landing_container">
 	<div class="main_content">
-		<img class="background_img" src="../../../assets/stock1.jpg">
-
-		<div class="main_title">
-			Welcome to Rentalil!
+		<div class="background_img_container" [@thumbState]="i == counter ? 'active' : 'inactive'" *ngFor="let img of images; let i = index">
+			<img class="background_img" src="{{ img.src }}" (click)="toggle()">
 		</div>
-		<div class="main_slogan">
-		  Invest now, start earning tomorrow!
-		</div>
+	
+		<div class="central_body">
+			<div class="main_title">
+				Welcome to Rentalil!
+			</div>
+			<div class="main_slogan">
+				Invest now, start earning tomorrow!
+			</div>
 
-		<button class="login_btn" color="primary" mat-raised-button routerLink="/login" routerLinkActive="active">Join Rentalil</button>
+			<button class="login_btn" color="primary" mat-raised-button routerLink="/login" routerLinkActive="active">Join Rentalil</button>
+		</div>
 	</div>
 </div>
 

@@ -8,31 +8,45 @@
 		flex-flow: column nowrap;
 		justify-content: center;
 		align-items: center;
+		text-align: center;
 		position: relative;
 		width: 100%;
 		height: 50%;
 
+		.background_img_container {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
 		.background_img {
 			width: 100%;
 			height: 100%;
-			z-index: -1;
-			position: absolute;
     		filter: blur(3px);
     		object-fit: cover;
+    		transform: scale(1);
 		}
 
-		.main_title {
-			font-size: 3.0em;
-			margin-bottom: 15px;
+		.central_body {
+			z-index: 1;
+
+			.main_title {
+				font-size: 3.0em;
+				margin-bottom: 15px;
+			}
+
+			.main_slogan {
+				font-size: 1.5em;
+				margin-bottom: 15px;
+			}
+
+			.login_btn {
+				color: #ffffff;
+			}
 		}
 
-		.main_slogan {
-			font-size: 1.5em;
-			margin-bottom: 15px;
-		}
 
-		.login_btn {
-			color: #ffffff;
-		}
 	}	
 }
