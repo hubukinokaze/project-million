@@ -1,5 +1,7 @@
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "./styles/loading.scss";
+@import "./styles/theme.scss";
+
+$primary: map-get($theme, primary);
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -50,4 +52,9 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+app-landing, app-login {
+	flex: 1;
+	/*background: mat-color($primary);*/
 }

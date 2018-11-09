@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {OverlayContainer} from '@angular/cdk/overlay';
 
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,6 +22,7 @@ import {
   MatFormFieldModule,
   MatInputModule
 } from '@angular/material';
+import { TitleBarComponent } from './components/title-bar/title-bar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import {
     LoginComponent,
     LandingComponent,
     DashboardComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    TitleBarComponent
   ],
   imports: [
     BrowserModule,
@@ -48,4 +51,8 @@ import {
   providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(overlayContainer: OverlayContainer) {
+    overlayContainer.getContainerElement().classList.add('rentalil-dark-theme');
+  }
+}

@@ -1,7 +1,8 @@
-.landing_container {
-	width: 100vw;
-	height: 100vh;
+@import "../../../styles/theme.scss";
 
+.landing_container {
+	height: 100%;
+	
 	.main_content {
 		display: flex;
 		flex-flow: column nowrap;
@@ -21,13 +22,17 @@
 		}
 
 		.main_title {
-			font-size: 2.5em;
+			font-size: 3.0em;
 			margin-bottom: 15px;
 		}
 
 		.main_slogan {
-			font-size: 1.2em;
+			font-size: 1.5em;
 			margin-bottom: 15px;
+		}
+
+		.login_btn {
+			color: #ffffff;
 		}
 	}	
 }

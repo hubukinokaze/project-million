@@ -1,0 +1,20 @@
+@import "../../../styles/theme.scss";
+
+.title_bar_container {
+	height: 100%;
+	background-color:  mat-color(map-get($theme, primary));
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	padding: 0 5px;
+	box-sizing: border-box;
+
+	.title_logo {
+		margin: auto 15px;
+		font-size: 1.5em;
+	}
+
+	.navigation_btn {
+		margin: auto 0;
+	}
+}

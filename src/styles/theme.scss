@@ -1,0 +1,21 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+/* Define a normal theme */
+$primary: mat-palette($mat-light-green, 500);
+$accent:  mat-palette($mat-pink, A200, A100, A400);
+$warn:    mat-palette($mat-red);
+$theme: mat-light-theme($primary, $accent, $warn);
+
+/* Define an alternate dark theme */
+$dark-primary: mat-palette($mat-red, 900);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-yellow, 500);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+/* Apply themes */
+@include angular-material-theme($theme);
+
+.rentalil-dark-theme {
+  @include angular-material-theme($dark-theme);
+}
