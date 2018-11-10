@@ -20,7 +20,8 @@ import {
   MatIconModule,
   MatCardModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatTabsModule,
 } from '@angular/material';
 import { TitleBarComponent } from './components/title-bar/title-bar.component';
 
@@ -46,7 +47,8 @@ import { TitleBarComponent } from './components/title-bar/title-bar.component';
     MatIconModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTabsModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

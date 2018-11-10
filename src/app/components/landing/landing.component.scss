@@ -12,6 +12,7 @@
 		position: relative;
 		width: 100%;
 		height: 80vh;
+		margin-bottom: 30px;
 
 		.background_img_container {
 			position: absolute;
@@ -31,6 +32,8 @@
 
 		.central_body {
 			z-index: 1;
+			color: #404040;
+			font-weight: 700;
 
 			.main_title {
 				font-size: 3.0em;
@@ -50,9 +53,26 @@
 				text-transform: uppercase;
 			}
 		}
-
-
 	}
+	.info_content {
+		::ng-deep .mat-tab-label {
+		    font-weight: 500; 
+		    color: mat-color(map-get($theme, primary)) !important;
+		    font-size: 1.5em;
+		    opacity: 0.8 !important
+		}
+
+		::ng-deep .mat-tab-label-active {
+		    color: mat-color(map-get($theme, primary)) !important;
+		    font-size: 1.6em;
+		}
+
+		::ng-deep .mat-tab-body-wrapper {
+		 	min-height: 300px;
+		}
+	}
+
+	
 
 	@media screen and (max-width: 1000px) {
 		.main_content {
@@ -71,9 +91,22 @@
 				.main_title {
 					font-size: 2.5em;
 				}
+
+				.login_btn {
+					height: 3em;
+				}
 			}
 		}
 		
+		.info_content {
+			::ng-deep .mat-tab-label {
+			    font-size: 1em;
+			}
+
+			::ng-deep .mat-tab-label-active {
+			    font-size: 1.1em;
+			}
+		}
 	}
 }
 
