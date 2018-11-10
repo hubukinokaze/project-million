@@ -68,8 +68,28 @@
 		}
 
 		::ng-deep .mat-tab-body-wrapper {
+			align-items: center;
 		 	min-height: 300px;
+
+		 	.mat-tab-body-content {
+		 		display: flex;
+		 		justify-content: center;
+		 	}
 		}
+
+		.tab_content {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 10px;
+
+			.simple_tab_img {
+				width: 15em;
+				height: 15em;
+				margin: 10px;
+			}
+		}
+		
 	}
 
 	
