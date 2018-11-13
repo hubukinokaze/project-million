@@ -19,13 +19,12 @@
 			</mat-form-field>
 
 			<div class="login_btn_container">
-				<button color="primary" mat-stroked-button type="submit">Login</button>
-				<mat-checkbox>Remember me</mat-checkbox>
+				<button color="primary" mat-stroked-button type="submit">Sign up</button>
 			</div>
 			
 
 			<div>
-				<div>New? <a routerLink="/signup" routerLinkActive="active">Sign up</a></div>
+				<div>Already a member? <a routerLink="/login" routerLinkActive="active">Login</a></div>
 			</div>
 
 			<div *ngIf="toggleErrorMsg">{{ errorMsg }}</div>

@@ -22,8 +22,10 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatTabsModule,
+  MatCheckboxModule
 } from '@angular/material';
 import { TitleBarComponent } from './components/title-bar/title-bar.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { TitleBarComponent } from './components/title-bar/title-bar.component';
     LandingComponent,
     DashboardComponent,
     PageNotFoundComponent,
-    TitleBarComponent
+    TitleBarComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { TitleBarComponent } from './components/title-bar/title-bar.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCheckboxModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

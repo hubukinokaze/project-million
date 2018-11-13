@@ -4,11 +4,11 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
 import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class SignupComponent implements OnInit {
   public loginForm: FormGroup;
   public toggleErrorMsg: boolean;
   public errorMsg: string;
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     this.errorMsg = "Incorrect email/password";
     this.invalidEmailMsg = "Not a valid email";
     this.invalidPWMsg = "Password cannot be empty";
-    this.title = "Login";
+    this.title = "Create your account";
   }
 
   public login(e) {
