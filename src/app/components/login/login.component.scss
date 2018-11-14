@@ -1,3 +1,5 @@
+@import "../../../styles/theme.scss";
+
 .login_container {
 	display: flex;
 	justify-content: center;
@@ -19,6 +21,7 @@
 		min-width: 300px;
 		max-width: 400px;
 		height: 400px;
+		color: $main_font;
 
 		.form_container {
 			display: flex;

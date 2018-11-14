@@ -2,10 +2,12 @@
 @include mat-core();
 
 /* Define a normal theme */
+$main_font: #404040;
+$soft_background_color: #F9F9F9;
 $primary: mat-palette($mat-light-green, 500);
 $accent:  mat-palette($mat-pink, A200, A100, A400);
 $warn:    mat-palette($mat-red);
-$theme: mat-light-theme($primary, $accent, $warn);
+$theme:   mat-light-theme($primary, $accent, $warn);
 
 /* Define an alternate dark theme */
 $dark-primary: mat-palette($mat-red, 900);

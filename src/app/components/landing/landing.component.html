@@ -17,9 +17,9 @@
 	</div>
 
 	<div class="info_content">
-		<mat-tab-group mat-stretch-tabs color="primary" class="tab_group">
+		<mat-tab-group mat-stretch-tabs color="primary" class="tab_group" (click)="scroll(content1)">
 			<mat-tab label="Simple">
-				<div class="tab_content">
+				<div #content1 class="tab_content">
 					<div>
 						<p>Easy to learn.</p>
 						<p>Easy to win.</p>
