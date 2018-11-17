@@ -3,6 +3,7 @@
 .main_body {
 	display: flex;
     flex-direction: column;
+    justify-content: space-between;
     height: 100vh;
 
 	app-title-bar {

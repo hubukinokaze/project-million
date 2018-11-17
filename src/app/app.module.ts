@@ -27,6 +27,8 @@ import {
 	MatTabsModule,
 	MatCheckboxModule
 } from '@angular/material';
+import { PrivacyComponent } from './components/privacy/privacy.component';
+import { TermsComponent } from './components/terms/terms.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import {
 	PageNotFoundComponent,
 	TitleBarComponent,
 	SignupComponent,
-	FooterComponent
+	FooterComponent,
+	PrivacyComponent,
+	TermsComponent
 	],
 	imports: [
 	BrowserModule,

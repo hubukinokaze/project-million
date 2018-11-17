@@ -5,6 +5,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { TermsComponent } from './components/terms/terms.component';
+import { PrivacyComponent } from './components/privacy/privacy.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
@@ -25,6 +27,14 @@ const routes: Routes = [
 		component: DashboardComponent,
 		canActivate: [AuthGuard],
 		data: { title: 'Rentalil - Dashboard' }
+	},{	
+		path: 'terms',
+		component: TermsComponent,
+		data: { title: 'Rentalil - Terms' }
+	},{	
+		path: 'privacy',
+		component: PrivacyComponent,
+		data: { title: 'Rentalil - Privacy' }
 	},{
 		path: '',
 		redirectTo: '/landing',

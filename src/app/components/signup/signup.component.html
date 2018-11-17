@@ -5,28 +5,37 @@
 			<mat-card-title>{{ title }}</mat-card-title>
 		</mat-card-header>
 
-		<form class=form_container (submit)="login($event)" [formGroup]="loginForm" *ngIf="loginForm">
+		<form class=form_container (submit)="signup($event)" [formGroup]="signupForm" *ngIf="signupForm">
 			<mat-form-field>
-			    <input matInput formControlName="email">
-			    <mat-placeholder>Email</mat-placeholder>
-			    <mat-error *ngIf="loginForm.controls['email'].invalid">{{ invalidEmailMsg }}</mat-error>
+				<input matInput formControlName="email">
+				<mat-placeholder>Email</mat-placeholder>
+				<mat-error *ngIf="signupForm.controls.email.invalid && !signupForm.controls.email.pristine">{{ invalidEmailMsg }}</mat-error>
 			</mat-form-field>
 
-			<mat-form-field>
-			    <input matInput type="password" formControlName="password">
-			    <mat-placeholder>Password</mat-placeholder>
-			    <mat-error *ngIf="loginForm.controls['password'].invalid">{{ invalidPWMsg }}</mat-error>
-			</mat-form-field>
+			<ng-container [formGroup]="passwordFormGroup">
+				<mat-form-field>
+					<input matInput type="password" formControlName="password">
+					<mat-placeholder>Password</mat-placeholder>
+					<mat-error *ngIf="passwordFormGroup.controls.password.invalid && !passwordFormGroup.controls.password.pristine">{{ invalidPWMsg }}</mat-error>
+				</mat-form-field>
 
+				<mat-form-field>
+					<input matInput type="password" formControlName="verifyPassword">
+					<mat-placeholder>Confirm Password</mat-placeholder>
+					<mat-error *ngIf="passwordFormGroup.controls.verifyPassword.invalid && !passwordFormGroup.controls.verifyPassword.pristine">{{ invalidPWMsg }}</mat-error>
+					
+				</mat-form-field>
+			</ng-container>
+			
 			<div class="login_btn_container">
 				<button color="primary" mat-stroked-button type="submit">Sign up</button>
 			</div>
-			
 
 			<div>
 				<div>Already a member? <a routerLink="/login" routerLinkActive="active">Login</a></div>
 			</div>
 
+			<div *ngIf="toggleErrorMsg && passwordFormGroup.errors?.doesMatchPassword">Password does not match</div>
 			<div *ngIf="toggleErrorMsg">{{ errorMsg }}</div>
 		</form>
 	</mat-card>
