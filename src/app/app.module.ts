@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {OverlayContainer} from '@angular/cdk/overlay';
+import { OverlayContainer } from '@angular/cdk/overlay';
 
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -17,55 +17,59 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AuthGuard } from './auth.guard';
 
 import {
-	MatButtonModule,
-	MatMenuModule,
-	MatToolbarModule,
-	MatIconModule,
-	MatCardModule,
-	MatFormFieldModule,
-	MatInputModule,
-	MatTabsModule,
-	MatCheckboxModule
+  MatButtonModule,
+  MatMenuModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatTabsModule,
+  MatCheckboxModule,
+  MatTableModule,
+  MatSortModule
 } from '@angular/material';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { TermsComponent } from './components/terms/terms.component';
 
 
 @NgModule({
-	declarations: [
-	AppComponent,
-	LoginComponent,
-	LandingComponent,
-	DashboardComponent,
-	PageNotFoundComponent,
-	TitleBarComponent,
-	SignupComponent,
-	FooterComponent,
-	PrivacyComponent,
-	TermsComponent
-	],
-	imports: [
-	BrowserModule,
-	AppRoutingModule,
-	FormsModule,
-	ReactiveFormsModule,
-	BrowserAnimationsModule,
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    LandingComponent,
+    DashboardComponent,
+    PageNotFoundComponent,
+    TitleBarComponent,
+    SignupComponent,
+    FooterComponent,
+    PrivacyComponent,
+    TermsComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
 
-	MatButtonModule,
-	MatMenuModule,
-	MatToolbarModule,
-	MatIconModule,
-	MatCardModule,
-	MatFormFieldModule,
-	MatInputModule,
-	MatTabsModule,
-	MatCheckboxModule
-	],
-	providers: [AuthGuard],
-	bootstrap: [AppComponent]
+    MatButtonModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTabsModule,
+    MatCheckboxModule,
+    MatTableModule,
+    MatSortModule
+  ],
+  providers: [AuthGuard],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
-	constructor(overlayContainer: OverlayContainer) {
-		overlayContainer.getContainerElement().classList.add('rentalil-dark-theme');
-	}
+  constructor(overlayContainer: OverlayContainer) {
+    overlayContainer.getContainerElement().classList.add('rentalil-dark-theme');
+  }
 }
