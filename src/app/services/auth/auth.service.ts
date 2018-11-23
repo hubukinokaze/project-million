@@ -15,10 +15,10 @@ export class AuthService {
 
   public authLogin(email, pw): boolean {
     if (email && pw) {
-      const account = localStorage.getItem('acount');
+      const account = localStorage.getItem('account');
+
       if (account) {
         const tempAccount = JSON.parse(account);
-
         if (email === tempAccount.email && pw === tempAccount.pw) {
           localStorage.setItem('isLoggedIn', 'true');
           this.isLoggedIn = true;

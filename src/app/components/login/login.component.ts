@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.checkLoggedIn();
     this.checkRemember();
 
     this.loginForm = this.formBuilder.group({
@@ -35,6 +36,12 @@ export class LoginComponent implements OnInit {
     });
 
     this.setupVariables();
+  }
+
+  private checkLoggedIn() {
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      this.router.navigateByUrl('/dashboard');
+    }
   }
 
   private checkRemember() {

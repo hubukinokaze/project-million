@@ -1,35 +1,35 @@
 <div class="login_container">
-	<img class="background_image" src="../../assets/stock4.jpg">
-	<mat-card class="login_form_card">
-		<mat-card-header>
-			<mat-card-title>{{ title }}</mat-card-title>
-		</mat-card-header>
+  <img class="background_image" src="../../assets/stock4.jpg">
+  <mat-card class="login_form_card">
+    <mat-card-header>
+      <mat-card-title>{{ title }}</mat-card-title>
+    </mat-card-header>
 
-		<form class=form_container (submit)="login($event)" [formGroup]="loginForm" *ngIf="loginForm">
-			<mat-form-field>
-			    <input matInput formControlName="email">
-			    <mat-placeholder>Email</mat-placeholder>
-			    <mat-error *ngIf="loginForm.controls['email'].invalid">{{ invalidEmailMsg }}</mat-error>
-			</mat-form-field>
+    <form class=form_container (submit)="login($event)" [formGroup]="loginForm" *ngIf="loginForm">
+      <mat-form-field>
+        <input matInput formControlName="email">
+        <mat-placeholder>Email</mat-placeholder>
+        <mat-error *ngIf="loginForm.controls['email'].invalid">{{ invalidEmailMsg }}</mat-error>
+      </mat-form-field>
 
-			<mat-form-field>
-			    <input matInput type="password" formControlName="password">
-			    <mat-placeholder>Password</mat-placeholder>
-			    <mat-error *ngIf="loginForm.controls['password'].invalid">{{ invalidPWMsg }}</mat-error>
-			</mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" formControlName="password">
+        <mat-placeholder>Password</mat-placeholder>
+        <mat-error *ngIf="loginForm.controls['password'].invalid">{{ invalidPWMsg }}</mat-error>
+      </mat-form-field>
 
-			<div class="login_btn_container">
-				<button color="primary" mat-stroked-button type="submit">Login</button>
-				<mat-checkbox color="primary" formControlName="remember">Remember me</mat-checkbox>
-			</div>
-			
+      <div class="login_btn_container">
+        <button color="primary" mat-stroked-button type="submit">Login</button>
+        <mat-checkbox color="primary" formControlName="remember">Remember me</mat-checkbox>
+      </div>
 
-			<div>
-				<div>New? <a routerLink="/signup" routerLinkActive="active">Sign up</a></div>
-			</div>
 
-			<div *ngIf="toggleErrorMsg">{{ errorMsg }}</div>
-		</form>
-	</mat-card>
+      <div>
+        <div>New? <a routerLink="/signup" routerLinkActive="active">Sign up</a></div>
+      </div>
+
+      <div *ngIf="toggleErrorMsg">{{ errorMsg }}</div>
+    </form>
+  </mat-card>
 </div>
 
