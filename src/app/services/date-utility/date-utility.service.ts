@@ -1,27 +1,26 @@
 import { Injectable } from '@angular/core';
 import * as moment from 'moment';
-import { Moment } from 'moment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DateUtilityService {
-  private today: Moment;
+  private today: moment.Moment;
 
   constructor() {
     this.today = moment(new Date());
   }
 
-  public getToday(...format: Array<string>): moment {
+  public getToday(...format: Array<string>): string {
     if (format.length === 1) {
       return this.today.format(format[0]);
     }
-    return this.today;
+    return this.today.toISOString();
   }
 
   public isExpired(date: Date): boolean {
     const temp = moment(date);
-    if (moment.duration(temp.diff(this.today)) < 0) {
+    if (moment.duration(temp.diff(this.today)).asDays() < 0) {
       return true;
     }
     return false;
