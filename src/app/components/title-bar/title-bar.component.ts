@@ -3,74 +3,74 @@ import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '
 import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
-	selector: 'app-title-bar',
-	templateUrl: './title-bar.component.html',
-	styleUrls: ['./title-bar.component.scss']
+  selector: 'app-title-bar',
+  templateUrl: './title-bar.component.html',
+  styleUrls: ['./title-bar.component.scss']
 })
 export class TitleBarComponent implements OnInit {
-	public title: string;
-	public buttonLabel: string;
-	public buttonLink: string;
+  public title: string;
+  public buttonLabel: string;
+  public buttonLink: string;
 
-	constructor(
-		private router: Router,
-		private auth: AuthService
-		) {
-		
-	}
+  constructor(
+    private router: Router,
+    private auth: AuthService
+  ) {
 
-	ngOnInit() {
-		this.initialSetup();
-		this.setupBackBtn();
-	}
+  }
 
-	ngOnDestroy() {
-	}
+  ngOnInit() {
+    this.initialSetup();
+    this.setupBackBtn();
+  }
 
-	private initialSetup() {
-		this.title = 'Rentalil';
-	}
+  ngOnDestroy() {
+  }
 
-	private setupBackBtn() {
-		this.router.events.subscribe( (event: Event) => {
-			if (event instanceof NavigationStart) {
-				// Show loading indicator
-			}
+  private initialSetup() {
+    this.title = 'Rentalil';
+  }
 
-			if (event instanceof NavigationEnd) {
-				if (event.url === "/login") {
-					this.buttonLabel = "Back";
-					this.buttonLink = '/landing';
-				} else if (event.url === "/signup") {
-					this.buttonLabel = "Login";
-					this.buttonLink = '/login';
-				} else if (event.url === "/dashboard") {
-					this.buttonLabel = "Logout";
-					this.buttonLink = '/login';
-				} else {
-					this.buttonLabel = "Login";
-					this.buttonLink = '/login';
-				}
-			}
+  private setupBackBtn() {
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationStart) {
+        // Show loading indicator
+      }
 
-			if (event instanceof NavigationError) {
-				// Hide loading indicator
+      if (event instanceof NavigationEnd) {
+        if (event.url.startsWith('/login')) {
+          this.buttonLabel = 'Back';
+          this.buttonLink  = '/landing';
+        } else if (event.url.startsWith('/signup')) {
+          this.buttonLabel = 'Login';
+          this.buttonLink  = '/login';
+        } else if (event.url.startsWith('/dashboard')) {
+          this.buttonLabel = 'Logout';
+          this.buttonLink  = '/login';
+        } else {
+          this.buttonLabel = 'Login';
+          this.buttonLink  = '/login';
+        }
+      }
 
-				// Present error to user
-				console.log(event.error);
-			}
-		});
-	}
+      if (event instanceof NavigationError) {
+        // Hide loading indicator
 
-	public goHome() {
-		let isLoggedIn = localStorage.getItem('isLoggedIn');
-		isLoggedIn === 'true' ? this.router.navigateByUrl('/dashboard') : this.router.navigateByUrl('/landing');
-	}
+        // Present error to user
+        console.log(event.error);
+      }
+    });
+  }
 
-	public onBackBtn(link) {
-		if (this.buttonLabel === 'Logout') {
-			this.auth.authLogout();
-		}
-		this.router.navigateByUrl(link);
-	}
+  public goHome() {
+    let isLoggedIn = localStorage.getItem('isLoggedIn');
+    isLoggedIn === 'true' ? this.router.navigateByUrl('/dashboard') : this.router.navigateByUrl('/landing');
+  }
+
+  public onBackBtn(link) {
+    if (this.buttonLabel === 'Logout') {
+      this.auth.authLogout();
+    }
+    this.router.navigateByUrl(link);
+  }
 }

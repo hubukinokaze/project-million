@@ -31,6 +31,8 @@ import {
 } from '@angular/material';
 import { PrivacyComponent } from './components/privacy/privacy.component';
 import { TermsComponent } from './components/terms/terms.component';
+import { OverviewComponent } from './components/dashboard/overview/overview.component';
+import { MainComponent } from './components/dashboard/main/main.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { TermsComponent } from './components/terms/terms.component';
     SignupComponent,
     FooterComponent,
     PrivacyComponent,
-    TermsComponent
+    TermsComponent,
+    OverviewComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

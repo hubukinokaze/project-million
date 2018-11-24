@@ -1,0 +1,16 @@
+@import "../../../../styles/theme.scss";
+
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: mat-color(map-get($theme, primary)) !important;
+}
+tr.mat-row:nth-child(odd) {
+  background-color: mat-color(map-get($theme, primary), 50) !important;
+}
+
+.time_left_row {
+  text-transform: capitalize;
+}
