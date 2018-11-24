@@ -2,15 +2,20 @@
 
 table {
   width: 100%;
-}
 
-th.mat-sort-header-sorted {
-  color: mat-color(map-get($theme, primary)) !important;
-}
-tr.mat-row:nth-child(odd) {
-  background-color: mat-color(map-get($theme, primary), 50) !important;
-}
+  th.mat-sort-header-sorted {
+    color: mat-color(map-get($theme, primary)) !important;
+  }
 
-.time_left_row {
-  text-transform: capitalize;
+  tr {
+    cursor: pointer;
+  }
+
+  tr.mat-row:nth-child(odd) {
+    background-color: mat-color(map-get($theme, primary), 50) !important;
+  }
+
+  .time_left_row {
+    text-transform: capitalize;
+  }
 }

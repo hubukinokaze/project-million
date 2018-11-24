@@ -24,7 +24,7 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            npm install @angular/cli@latest -g
+#            npm install @angular/cli@latest -g
             npm install
       - save_cache:
           paths:

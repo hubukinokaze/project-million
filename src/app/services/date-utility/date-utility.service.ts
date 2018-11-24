@@ -21,7 +21,7 @@ export class DateUtilityService {
 
   public isExpired(date: Date): boolean {
     const temp = moment(date);
-    if (moment.duration(temp.diff(this.today)).as('hours') < 0) {
+    if (moment.duration(temp.diff(this.today)) < 0) {
       return true;
     }
     return false;
