@@ -1,5 +1,12 @@
 @import "../../../../styles/theme.scss";
 
+.title {
+  font-size: 2em;
+  font-weight: bold;
+  color: $main_font;
+  margin: 1em;
+}
+
 table {
   width: 100%;
 

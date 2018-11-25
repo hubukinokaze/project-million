@@ -9,6 +9,7 @@ import { AuthService } from '../../services/auth/auth.service';
 })
 export class TitleBarComponent implements OnInit {
   public title: string;
+  public coursesLabel: string;
   public buttonLabel: string;
   public buttonLink: string;
 
@@ -28,7 +29,8 @@ export class TitleBarComponent implements OnInit {
   }
 
   private initialSetup() {
-    this.title = 'Rentalil';
+    this.title        = 'Rentalil';
+    this.coursesLabel = 'Courses';
   }
 
   private setupBackBtn() {
@@ -63,7 +65,7 @@ export class TitleBarComponent implements OnInit {
   }
 
   public goHome() {
-    let isLoggedIn = localStorage.getItem('isLoggedIn');
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
     isLoggedIn === 'true' ? this.router.navigateByUrl('/dashboard') : this.router.navigateByUrl('/landing');
   }
 

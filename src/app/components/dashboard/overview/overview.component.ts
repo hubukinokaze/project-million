@@ -8,6 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class OverviewComponent implements OnInit {
   private subscriptions: Array<any> = [];
+  private isPurchased: boolean;
+  public buyBtnLabel: string;
 
   constructor(
     private aroute: ActivatedRoute
@@ -18,6 +20,9 @@ export class OverviewComponent implements OnInit {
     this.subscriptions.push(this.aroute.params.subscribe((params) => {
       console.log(params.id);
     }));
+
+    this.setupVars();
+    this.checkIsPurchased();
   }
 
   ngOnDestroy() {
@@ -26,4 +31,17 @@ export class OverviewComponent implements OnInit {
     });
   }
 
+  private setupVars() {
+    this.buyBtnLabel = 'Buy';
+  }
+
+  private checkIsPurchased() {
+    // TODO: make call to see if purchased
+    if (Math.floor(Math.random() * 2) === 1) {
+      this.isPurchased = true;
+      this.buyBtnLabel = 'Purchased';
+    } else {
+      this.isPurchased = false;
+    }
+  }
 }

@@ -14,7 +14,8 @@
   </div>
 
   <div class="more_container">
-    <button mat-raised-button color="primary">Buy</button>
+    <button mat-raised-button color="primary" [disabled]="isPurchased">{{ buyBtnLabel }}</button>
+    <div class="expiration" *ngIf="isPurchased">Expires on: MM/DD/YYYY</div>
   </div>
 
 </div>
