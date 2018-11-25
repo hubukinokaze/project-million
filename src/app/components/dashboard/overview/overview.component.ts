@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class OverviewComponent implements OnInit {
   private subscriptions: Array<any> = [];
-  private isPurchased: boolean;
+  public isPurchased: boolean;
   public buyBtnLabel: string;
 
   constructor(
